@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="settings-card" aria-labelledby="settings-title">
+      <header>
+        <h1 id="settings-title">User Settings</h1>
+        <p>Update your account preferences and information.</p>
+      </header>
+
+      <form id="settings-form" novalidate>
+        <fieldset>
+          <legend>Personal information</legend>
+
+          <div class="form-group">
+            <label for="full-name">Full name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="fullName"
+              autocomplete="name"
+              required
+              minlength="2"
+              aria-describedby="full-name-error"
+            >
+            <p
+              id="full-name-error"
+              class="error-message"
+              role="alert"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-error"
+            >
+            <p
+              id="email-error"
+              class="error-message"
+              role="alert"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="language">Language preference</label>
+            <select
+              id="language"
+              name="language"
+              required
+              aria-describedby="language-error"
+            >
+              <option value="">Select a language</option>
+              <option value="english">English</option>
+              <option value="siswati">siSwati</option>
+              <option value="french">French</option>
+            </select>
+
+            <p
+              id="language-error"
+              class="error-message"
+              role="alert"
+              aria-live="polite"
+            ></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Password</legend>
+
+          <div class="form-group">
+            <label for="new-password">New password <span>(optional)</span></label>
+            <input
+              type="password"
+              id="new-password"
+              name="newPassword"
+              autocomplete="new-password"
+              minlength="8"
+              aria-describedby="new-password-error"
+            >
+            <p
+              id="new-password-error"
+              class="error-message"
+              role="alert"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              autocomplete="new-password"
+              aria-describedby="confirm-password-error"
+            >
+            <p
+              id="confirm-password-error"
+              class="error-message"
+              role="alert"
+              aria-live="polite"
+            ></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Email preferences</legend>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="email-notifications"
+              name="emailNotifications"
+            >
+            <label for="email-notifications">Email notifications</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="marketing-emails"
+              name="marketingEmails"
+            >
+            <label for="marketing-emails">Marketing emails</label>
+          </div>
+        </fieldset>
+
+        <button type="submit">Save settings</button>
+
+        <p
+          id="form-success"
+          class="success-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
